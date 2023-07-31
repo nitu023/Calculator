@@ -5,6 +5,7 @@ const Calculator = () => {
   const [display, setDisplay] = useState('');
 
   const handleButtonClick = (value) => {
+    console.log(value);
     setDisplay((prevDisplay) => prevDisplay + value);
   };
 
@@ -21,10 +22,11 @@ const Calculator = () => {
   };
 
   const evalExpression = (expression) => {
+    console.log(expression);
     try {
-      // eslint-disable-next-line no-new-func
       return new Function('return ' + expression)();
     } catch (error) {
+      
       return NaN;
     }
   };
